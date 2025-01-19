@@ -7,6 +7,9 @@ TagManager:
   - Logic
   - Speeder
   - optionsLogic
+  - konnyu
+  - normal
+  - nehez
   layers:
   - Default
   - TransparentFX

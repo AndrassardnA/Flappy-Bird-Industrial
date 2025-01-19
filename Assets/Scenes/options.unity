@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 364232372}
   m_Layer: 5
   m_Name: 3-nehez
-  m_TagString: Untagged
+  m_TagString: nehez
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,8 +571,9 @@ GameObject:
   - component: {fileID: 464967932}
   - component: {fileID: 464967931}
   - component: {fileID: 464967930}
+  - component: {fileID: 464967934}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Options Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,8 +628,8 @@ Canvas:
   m_GameObject: {fileID: 464967929}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 735675785}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -639,7 +640,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &464967933
 RectTransform:
@@ -671,6 +672,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &464967934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464967929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67aab11e4a5dc4b4daadef6b2f486373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &467896329
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,10 +809,10 @@ GameObject:
   m_Component:
   - component: {fileID: 735675786}
   - component: {fileID: 735675785}
-  - component: {fileID: 735675784}
   - component: {fileID: 735675783}
+  - component: {fileID: 735675787}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Options Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,14 +862,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &735675784
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735675782}
-  m_Enabled: 1
 --- !u!20 &735675785
 Camera:
   m_ObjectHideFlags: 0
@@ -893,7 +898,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 9
-  m_Depth: -1
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -923,6 +928,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735675787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735675782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67aab11e4a5dc4b4daadef6b2f486373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &801314597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943023053}
   - component: {fileID: 943023052}
+  - component: {fileID: 943023054}
   m_Layer: 0
   m_Name: Options-logic-manager
   m_TagString: optionsLogic
@@ -1253,6 +1271,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &943023054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943023051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67aab11e4a5dc4b4daadef6b2f486373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1102929048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1369,7 @@ GameObject:
   - component: {fileID: 1217153606}
   m_Layer: 5
   m_Name: 1-konnyu
-  m_TagString: Untagged
+  m_TagString: konnyu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1529,7 +1559,7 @@ GameObject:
   - component: {fileID: 1440318171}
   m_Layer: 5
   m_Name: 2-normal
-  m_TagString: Untagged
+  m_TagString: normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1762,7 +1792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.5700002}
+  m_AnchoredPosition: {x: 0, y: 1.5699997}
   m_SizeDelta: {x: 49.1, y: 4.6600003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483581919

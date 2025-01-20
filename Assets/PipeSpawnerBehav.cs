@@ -15,9 +15,10 @@ public class PipeSpawnerBehav : MonoBehaviour
     public SpeedScript speeder;
     public Options_Logic_Manager_Script opScript;
     private int nehezseg=2;
-    // Start is called before the first frame update
+    // Start
     void Start()
     {
+        //nehezseg beallitasa
         nehezseg = 2;
         if (GameObject.FindWithTag("optionsLogic") != null)
         {
@@ -27,13 +28,23 @@ public class PipeSpawnerBehav : MonoBehaviour
         {
             Debug.LogWarning("Az options még nem lett megnyitva");
         }
-        
-        spawnPipe(Random.Range(1, 4));
-        speeder = GameObject.FindWithTag("Speeder").GetComponent<SpeedScript>();
         if (opScript != null)
         {
             nehezseg = opScript.getNehezseg();
         }
+        //elso pipe spawnolasa
+        if (nehezseg != 1)
+        {
+            r = Random.Range(1, 4);
+        }
+        else
+        {
+            r = Random.Range(2, 4);
+        }
+        spawnPipe(r);
+        //speeder 
+        speeder = GameObject.FindWithTag("Speeder").GetComponent<SpeedScript>();
+        
     }
 
     // Update is called once per frame
@@ -60,7 +71,15 @@ public class PipeSpawnerBehav : MonoBehaviour
             spwnMax = 4;
            
         }
-         r = Random.Range(1, 4);
+        if (nehezseg != 1)
+        {
+            r = Random.Range(1, 4);
+        }
+        else
+        {
+            r = Random.Range(2, 4);
+        }
+         
         if (timer < spawnrate)
         {
             timer += Time.deltaTime;

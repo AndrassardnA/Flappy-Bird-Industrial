@@ -11,17 +11,34 @@ public class BirdScript : MonoBehaviour
     private float speedUp = 3;
     public LogicScript logic;
     private bool birdIsAlive = true;
-    // Start is called before the first frame update
+    public Animator animator;
+    public float zuhanasSebesseg;
+   /* private bool fly;
+    private float timer;
+    private bool ableToFall;*/
+    
     void Start()
     {
         logic = GameObject.FindWithTag("Logic").GetComponent<LogicScript>();
+        animator.SetBool("Fly", true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector2 velocity = myRigidbody.velocity;
+       /* if (velocity.y < zuhanasSebesseg&&ableToFall)
+        {
+            animator.SetBool("Fly", false);
+            fly = false;
+        }*/
         if (Input.GetKeyDown(KeyCode.Space)&&birdIsAlive)
         {
+            /*animator.SetBool("Fly", true);*/
+            /*timer = 0;
+            ableToFall = false;
+            fly = true;*/
+
             myRigidbody.velocity = Vector2.up * flapStrength;
             
             myRigidbody.rotation += rotateUp;
@@ -32,10 +49,12 @@ public class BirdScript : MonoBehaviour
         if (myRigidbody.rotation > 12)
         {
             rotateUp = 7;
+            
         }
         else if(myRigidbody.rotation < -12)
         {
             rotateUp = 11;
+            
         }
         else
         {
@@ -56,8 +75,21 @@ public class BirdScript : MonoBehaviour
         }
 
     }
+    void LateUpdate()
+    {
+        /*if (birdIsAlive && fly)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 1.034f)
+            {
+                ableToFall = true;
+                timer = 0;
+            }
+        }      */ 
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        animator.SetBool("Fly", false);
         logic.gameOver();
         birdIsAlive = false;
     }

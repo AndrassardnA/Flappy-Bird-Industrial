@@ -13,31 +13,28 @@ public class BirdScript : MonoBehaviour
     private bool birdIsAlive = true;
     public Animator animator;
     public float zuhanasSebesseg;
-   /* private bool fly;
-    private float timer;
-    private bool ableToFall;*/
-    
+    ParticleSystem particle;
+
+    void Awake()
+    {
+        particle = GetComponent<ParticleSystem>();
+        particle.Stop();
+    }
+
     void Start()
     {
         logic = GameObject.FindWithTag("Logic").GetComponent<LogicScript>();
         animator.SetBool("Fly", true);
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 velocity = myRigidbody.velocity;
-       /* if (velocity.y < zuhanasSebesseg&&ableToFall)
-        {
-            animator.SetBool("Fly", false);
-            fly = false;
-        }*/
+       
+        //SPACE LENYOMVA
         if (Input.GetKeyDown(KeyCode.Space)&&birdIsAlive)
         {
-            /*animator.SetBool("Fly", true);*/
-            /*timer = 0;
-            ableToFall = false;
-            fly = true;*/
+            ParticlePlay(2);
 
             myRigidbody.velocity = Vector2.up * flapStrength;
             
@@ -75,22 +72,19 @@ public class BirdScript : MonoBehaviour
         }
 
     }
-    void LateUpdate()
-    {
-        /*if (birdIsAlive && fly)
-        {
-            timer += Time.deltaTime;
-            if (timer >= 1.034f)
-            {
-                ableToFall = true;
-                timer = 0;
-            }
-        }      */ 
-    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         animator.SetBool("Fly", false);
         logic.gameOver();
         birdIsAlive = false;
+    }
+
+    void ParticlePlay(int n)
+    {
+        if (Random.Range(1, n+1) == 1)
+        {
+            particle.Play();
+        }
     }
 }

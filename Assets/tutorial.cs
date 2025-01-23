@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class tutorial : MonoBehaviour
 {
-    /* bool needTutorial=true;*/
+  
    public GameObject pushSpaceTitle;
     void Start()
     {

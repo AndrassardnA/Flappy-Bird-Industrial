@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class LogicScript : MonoBehaviour 
 {
     public int scoreInt;
     public Text scoreText;
     public GameObject gameOverScreen;
     public GameObject pushSpaceTitle;
+    
     void Start()
     {
         pushSpaceTitle = GameObject.FindGameObjectWithTag("tutorial");
+        
     }
 
     [ContextMenu("Increase Score")]

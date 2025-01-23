@@ -14,9 +14,6 @@ public class Options_Logic_Manager_Script : MonoBehaviour
 
    void Start()
     {
-      /*  konnyu = GameObject.FindWithTag("konnyu");
-        normal = GameObject.FindWithTag("normal");
-        nehez = GameObject.FindWithTag("nehez");*/
         nehezsegArr[0] = konnyu;
         nehezsegArr[1] = normal;
         nehezsegArr[2] = nehez;

@@ -14,6 +14,7 @@ public class BirdScript : MonoBehaviour
     public Animator animator;
     public float zuhanasSebesseg;
     ParticleSystem particle;
+   /* FSX audioManager;*/
 
     void Awake()
     {
@@ -25,7 +26,7 @@ public class BirdScript : MonoBehaviour
     {
         logic = GameObject.FindWithTag("Logic").GetComponent<LogicScript>();
         animator.SetBool("Fly", true);
-        
+      /*  audioManager = GameObject.FindGameObjectWithTag("Audio").AddComponent<FSX>();*/
     }
 
     void Update()
@@ -34,8 +35,11 @@ public class BirdScript : MonoBehaviour
         //SPACE LENYOMVA
         if (Input.GetKeyDown(KeyCode.Space)&&birdIsAlive)
         {
+            //Particle
             ParticlePlay(2);
-
+            //Audio
+           /* audioManager.playAudio(audioManager.hang1);*/
+            //Mozgas
             myRigidbody.velocity = Vector2.up * flapStrength;
             
             myRigidbody.rotation += rotateUp;

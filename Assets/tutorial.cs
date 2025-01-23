@@ -6,10 +6,10 @@ using UnityEngine;
 public class tutorial : MonoBehaviour
 {
     /* bool needTutorial=true;*/
-   public GameObject gameObject;
+   public GameObject pushSpaceTitle;
     void Start()
     {
-        
+        pushSpaceTitle = GameObject.FindGameObjectWithTag("tutorial");
     }
 
     
@@ -17,7 +17,7 @@ public class tutorial : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.SetActive(false);
+            pushSpaceTitle.SetActive(false);
         }
     }
 }
